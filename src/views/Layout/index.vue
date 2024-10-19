@@ -8,7 +8,7 @@ import '@/styles/common.scss'
 
 import LayoutFixedVue from './components/LayoutFixed.vue'
 
-import {useCategoryStore} from '@/stores/category'
+import {useCategoryStore} from '@/stores/categoryStore'
 import { onMounted } from 'vue'
 
 const categoryStore = useCategoryStore()
