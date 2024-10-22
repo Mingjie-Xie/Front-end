@@ -16,7 +16,7 @@ getCategory().then(res=>{
 })
 
 
-
+//
 const app = createApp(App)
 const pinia = createPinia()
 
