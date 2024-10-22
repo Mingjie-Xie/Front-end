@@ -1,6 +1,9 @@
 <script setup>
-const userStore = {}
+// 导入userStore
+import { useUserStore } from '@/stores/userStore'
+const userStore = useUserStore()
 </script>
+
 
 <template>
   <div class="home-overview">

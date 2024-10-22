@@ -1,19 +1,20 @@
 <script setup>
-import {useCartStore} from '@/stores/cartStore'
+import { useCartStore } from '@/stores/cartStore'
 const cartStore = useCartStore()
+
 </script>
-<!-- -->
+
 <template>
   <div class="cart">
     <a class="curr" href="javascript:;">
-      <i class="iconfont icon-cart"></i><em>{{cartStore.cartList.length }}</em>
+      <i class="iconfont icon-cart"></i><em>{{ cartStore.cartList.length }}</em>
     </a>
     <div class="layer">
       <div class="list">
-        
+
         <div class="item" v-for="i in cartStore.cartList" :key="i">
           <RouterLink to="">
-            <img :src="i.pictures" alt="" />
+            <img :src="i.picture" alt="" />
             <div class="center">
               <p class="name ellipsis-2">
                 {{ i.name }}
@@ -22,17 +23,17 @@ const cartStore = useCartStore()
             </div>
             <div class="right">
               <p class="price">&yen;{{ i.price }}</p>
-              <p class="count">x{{i.count }}></p>
+              <p class="count">x{{ i.count }}</p>
             </div>
           </RouterLink>
           <i class="iconfont icon-close-new" @click="cartStore.delCart(i.skuId)"></i>
         </div>
-        
+
       </div>
       <div class="foot">
         <div class="total">
-          <p>共 {{cartStore.allCount}} 件商品</p>
-          <p>&yen; {{cartStore.allPrice.toFixed(2)}} </p>
+          <p>共 {{ cartStore.allCount }} 件商品</p>
+          <p>&yen; {{ cartStore.allPrice.toFixed(2) }} </p>
         </div>
         <el-button size="large" type="primary" @click="$router.push('/cartlist')">去购物车结算</el-button>
       </div>
