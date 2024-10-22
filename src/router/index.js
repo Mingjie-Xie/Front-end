@@ -38,6 +38,10 @@ const router = createRouter({
           component: CartList
         },
         {
+         path: '/checkout',
+         component: Checkout
+       },
+        {
           path:'pay',
           component: Pay
         }
@@ -47,10 +51,6 @@ const router = createRouter({
     {
       path: '/login',
       component: Login
-    },
-    {
-      path: '/checkout',
-      component: Checkout
     }
     
   ],
